@@ -1,4 +1,12 @@
 node_modules
-redisdata
 dist
+
+app/node_modules
+app/dist
+
+worker/node_modules
+worker/dist
+
+redisdata
+
 .idea

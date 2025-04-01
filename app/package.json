@@ -1,0 +1,30 @@
+{
+  "name": "typescript-redis-bull",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-watch": "concurrently 'tsc -w' 'nodemon dist/index.js'",
+    "start": "tsc && node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/bull": "^4.10.4",
+    "@types/express": "^5.0.1",
+    "bull": "^4.16.5",
+    "bullmq": "^5.45.2",
+    "express": "^4.21.2",
+    "ioredis": "^5.6.0",
+    "nodemon": "^3.1.9",
+    "redis": "^4.7.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.14",
+    "concurrently": "^9.1.2"
+  }
+}

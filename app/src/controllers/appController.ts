@@ -1,4 +1,4 @@
-import { messageService } from "../services/messageService";
+import { queueService } from "../services/queueService";
 
 const statuses = {
     PROCESSING: 202,
@@ -16,7 +16,11 @@ const handleError = (response, error: any): void => {
 class AppController {
     public async processIds(req, res): Promise<void> {
         try {
-            const result = await messageService.addMessage(messageService.processIdsQueue, 'My message');
+            const result = await queueService.addBulk(
+                queueService.processIdsQueue,
+                'My message',
+                req.body,
+            );
             handleSuccess(res, result)
 
         } catch (e) {
