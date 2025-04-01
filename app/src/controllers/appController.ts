@@ -10,7 +10,7 @@ const handleSuccess = (response, result: any): void => {
     response.status(statuses.PROCESSING).send(result)
 }
 
-const handleError = (response, error: any): void => {
+const handleError = (response, error: Error): void => {
     response.status(statuses.INTERNAL_SERVER_ERROR).send(error)
 }
 
