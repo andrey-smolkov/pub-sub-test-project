@@ -1,6 +1,6 @@
 import { Queue } from 'bullmq';
-import {RedisService} from "./RedisService";
-import { logger } from "./Logger";
+import { RedisService } from "./RedisService";
+import { logger } from "./logger";
 
 const PROCESS_IDS_QUEUE = 'PROCESS_IDS_QUEUE';
 
@@ -24,4 +24,3 @@ class QueueService extends RedisService {
 }
 
 export const queueService = new QueueService();
-

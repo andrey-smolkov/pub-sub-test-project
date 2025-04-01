@@ -1,6 +1,6 @@
 import IORedis from 'ioredis';
-import {RedisService} from "./RedisService";
-import {logger} from "./Logger";
+import { RedisService } from "./RedisService";
+import { logger } from "./logger";
 
 export enum Events {
     PROCESSING_COMPLETED = 'PROCESSING_COMPLETED'
