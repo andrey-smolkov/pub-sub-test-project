@@ -26,7 +26,6 @@ class AppController {
         } catch (e) {
             handleError(res, e)
         }
-
     }
 }
 

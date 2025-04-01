@@ -1,6 +1,6 @@
 import { Queue } from 'bullmq';
 import {RedisService} from "./RedisService";
-import {logger} from "./Logger";
+import { logger } from "./Logger";
 
 const PROCESS_IDS_QUEUE = 'PROCESS_IDS_QUEUE';
 

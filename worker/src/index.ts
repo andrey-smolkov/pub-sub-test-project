@@ -7,6 +7,8 @@ import {logger} from "./Logger";
 const connection = new IORedis({
     maxRetriesPerRequest: null,
     host: process.env.REDIS_HOST || 'localhost',
+    username: process.env.REDIS_USER,
+    password: process.env.REDIS_USER_PASSWORD,
 });
 
 const PROCESS_IDS_QUEUE = 'PROCESS_IDS_QUEUE';
