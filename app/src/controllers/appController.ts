@@ -1,3 +1,4 @@
+import { Request, Response } from "express";
 import { queueService } from "../services/queueService";
 
 const statuses = {
@@ -14,7 +15,7 @@ const handleError = (response, error: any): void => {
 }
 
 class AppController {
-    public async processIds(req, res): Promise<void> {
+    public async processIds(req: Request, res: Response): Promise<void> {
         try {
             const result = await queueService.addBulk(
                 queueService.processIdsQueue,
