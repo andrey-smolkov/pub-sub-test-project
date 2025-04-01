@@ -16,7 +16,6 @@ class QueueService extends RedisService {
         try {
             const bulkData = (data?.ids || []).map((id: number) => ({name: message, data: {id}}));
             await queue.addBulk(bulkData);
-            logger.log('Job added to queue');
             return 'success'
         } catch(e){
             logger.error(`Error adding bulk: ${e}`);

@@ -18,7 +18,6 @@ class SubscribeService extends RedisService {
         try {
             await this.subscriber.subscribe(event);
             this.subscriber.on('message', (channel, message) => {
-                logger.log(`Process event: ${channel}, channel: ${message}`);
                 if (channel === event) {
                     callback(message);
                 }

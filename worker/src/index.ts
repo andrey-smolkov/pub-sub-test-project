@@ -2,7 +2,7 @@ import { Worker, Job } from 'bullmq';
 import IORedis from 'ioredis';
 import { cacheService } from "./services/cacheService";
 import { publishService } from "./services/publishService";
-import {logger} from "./Logger";
+import { logger } from "./Logger";
 
 const connection = new IORedis({
     maxRetriesPerRequest: null,
@@ -27,6 +27,5 @@ const worker = new Worker(PROCESS_IDS_QUEUE, async (job: Job) => {
 }, {connection});
 
 worker.on('completed', (job, result) => {
-    logger.log(`Publish result:`, result);
     publishService.publish(PROCESSING_COMPLETED, result);
 });
